@@ -103,6 +103,12 @@ li{
     
 }
 
+.qrcode img {
+    margin-top:20px !important;
+    margin:auto;
+
+}
+
 table,tr,td{
     height: 480px;
     vertical-align: middle;
@@ -421,10 +427,10 @@ function normalise(chaine){
 }
 
 data.forEach(citation => {
-    document.querySelector("ul").innerHTML += `<li class="recto"><div class="carte"><div class="gauche"><img class="photo" src="${citation.Image}"></div><img class="logo" src="https://george2etexte.files.wordpress.com/2019/02/ledeuxiemetexte-medium.png"><div class="droite"><h2 class="nom"><span class="orange">✷${citation.Date}✷</span></h2><span class="nom">${citation.Autrice}</span><br><span class="nom">(${citation.Dates})</span><br><div id="qrcode${citation.Date}"></div></div></div></li>
+    document.querySelector("ul").innerHTML += `<li class="recto"><div class="carte"><div class="gauche"><img class="photo" src="${citation.Image.replace("http","https")}"></div><img class="logo" src="https://george2etexte.files.wordpress.com/2019/02/ledeuxiemetexte-medium.png"><div class="droite"><h2 class="nom"><span class="orange">✷${citation.Date}✷</span></h2><span class="nom">${citation.Autrice}</span><br><span class="nom">(${citation.Dates})</span><br><div class="qrcode" id="qrcode${citation.Date}"></div></div></div></li>
     <li class="recto"><div class="carte"><table><tr><td class="citation">«&nbsp;${normalise(citation["Citation (max 120 caractères)"])}&nbsp;»</td></tr></table><div class="ref">${normalise(citation["Réfs"])}</div></div></li>`
     new QRCode(document.getElementById("qrcode"+citation.Date), {
-    text: "http://jindo.dev.naver.com/collie",
+    text: "http://jindo.dev.naver.com/collie#"+citation.Date,
     width: 128,
     height: 128,
     colorDark : "#ff914d",
