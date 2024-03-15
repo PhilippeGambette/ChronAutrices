@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartes</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <style>
+@font-face{
+	font-family: "opendyslexic";
+	src: url('fonts/OpenDyslexic-Regular.otf');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "opendyslexic";
+	src: url('fonts/OpenDyslexic-Italic.otf');
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face{
+	font-family: "opendyslexic";
+	src: url('fonts/OpenDyslexic-Bold.otf');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face{
+	font-family: "opendyslexic";
+	src: url('fonts/OpenDyslexic-BoldItalic.otf');
+	font-weight: bold;
+	font-style: italic;
+}
+
+ul{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
+    list-style-type: none;
+}
+
+h2{
+    font-size: 80px !important;
+    margin:0px; 
+}
+
+li{
+    vertical-align: middle;
+    display: inline-block;
+    background-color: #8282d2;
+    width: 890px;
+    height: 630px;
+    border-radius: 40px;
+    margin: 40px;
+}
+
+.orange{
+    color:#ff914d;
+}
+
+.gauche{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 40%;
+    overflow: hidden;
+    text-align:center;
+}
+
+.photo{
+    position:relative;
+    margin:auto;
+    left:50%;
+    transform: translateX(-50%);
+    text-align:center;
+    height: 550px;
+}
+
+.droite{
+    position: absolute;
+    right:0px;
+    top:0px;
+    width: 60%;
+}
+
+.logo{
+    position: absolute;
+    left:0px;
+    bottom:-20px;
+    width: 160px;
+}
+
+.carte{
+    background-color: white;
+    position: relative;
+    border-radius: 40px;
+    width: 810px;
+    height: 550px;
+    margin: 40px;
+    text-align: center;
+    font-family: opendyslexic;
+    
+}
+
+table,tr,td{
+    height: 480px;
+    vertical-align: middle;
+}
+
+tr{
+    transform: translateY(-40px);
+}
+
+.nom{
+    font-size: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.citation{
+    font-size: 30px;
+    padding: 40px;
+}   
+
+.ref{
+    position: absolute;
+    background-color: #ff914d;
+    color: white;
+    bottom:0px;
+    height:100px;
+    width:770px;
+    left:0px;
+    font-size:20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom-left-radius: 40px ;
+    border-bottom-right-radius: 40px ;
+}
+
+        </style>
+    <ul>
+    </ul>
+</body>
+<script>
+    var data = [
+  {
+    "Date": 1801,
+    "Autrice": "Fanny Raoul",
+    "Citation (max 120 caractères)": "Combien de ces malheureuses ont été et sont encore victimes de la barbarie d'un époux ! Combien ! dont les mânes gémissants réclament une juste vengeance !",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "",
+    "Image": "",
+    "Dates": "1771-1833",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 155,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1807,
+    "Autrice": "Jeanne Gacon-Dufour",
+    "Citation (max 120 caractères)": "Oui, mes romans sont des drogues contre l’ennui, et si j’en juge par l’accueil que le public leur a fait, ces drogues ne sont pas absolument mauvaises.",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "https://fr.wikisource.org/wiki/Page%3AGacon-Dufour_-_RA13%A9ponse_A13%A0_M._A...%2C_1807.djvu/18",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Madame%20Gacon-Dufour.jpg",
+    "Dates": "1753-1835",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 151,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1813,
+    "Autrice": "Germaine de Staël",
+    "Citation (max 120 caractères)": "[...] la gloire elle-même ne saurait être pour une femme qu’un deuil éclatant du bonheur",
+    "Réfs": "De l'Allemagne, Volume 3, Londres : Murray, 1813",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=l1wAAAAAcAAJ&pg=PA235",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marie%20El%C3%A9onore%20Godefroid%20-%20Portrait%20of%20Mme%20de%20Sta%C3%ABl.jpg",
+    "Dates": "1766-1817",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 88,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1823,
+    "Autrice": "Claire de Duras",
+    "Citation (max 120 caractères)": "Je ne pouvais m’étonner de vivre au milieu du luxe, de n’être entourée que des personnes les plus spirituelles et les plus aimables : je ne connaissais pas autre chose",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "https://fr.wikisource.org/wiki/Ourika",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Claire%20de%20Duras.jpg",
+    "Dates": "1777-1828",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 167,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1829,
+    "Autrice": "Constance de Salm",
+    "Citation (max 120 caractères)": "On a besoin de s’accoutumer à tout, au malheur, à la maladie, au bonheur même.",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=dCA6AAAAcAAJ&pg=PA20",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Jean%20Baptiste%20Fran%C3%A7ois%20D%C3%A9soria%20-%20Portrait%20of%20Constance%20Pipelet%20-%201939.533%20-%20Art%20Institute%20of%20Chicago.jpg",
+    "Dates": "1767-1845",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 78,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1835,
+    "Autrice": "Elisabeth Vigée Le Brun",
+    "Citation (max 120 caractères)": "Car j'ai oublié de vous dire, chère amie, qu'il s'était fait en moi une métamorphose et que j'étais devenue jolie",
+    "Réfs": "Souvenirs de Mme Louise-Élisabeth Vigée-Le Brun, Volume 1",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=PXQvAQAAMAAJ&pg=PA16",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%89lisabeth%20Vig%C3%A9e-Lebrun%20-%20selfportrait%20%28Kimbell%20Art%20Museum%2C%201781-2%29.jpg",
+    "Dates": "1755-1842",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 113,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1837,
+    "Autrice": "Delphine de Girardin",
+    "Citation (max 120 caractères)": "Ah ! quel bonheur d’être libre, libre de la plus belle de toutes les libertés, celle de la pensée",
+    "Réfs": "Lettres parisiennes Henri Plon, 1860 (Œuvres complètes de Delphine de Girardin. Tome IV, p. 119-124)",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://fr.wikisource.org/wiki/Lettres_parisiennes/AnnA13%A9e_1837/15",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Louis%20Hersent%20-%20Delphine%20de%20Girardin.jpg",
+    "Dates": "1804-1855",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 97,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1838,
+    "Autrice": "Eugénie de Guérin",
+    "Citation (max 120 caractères)": "Les rois peuvent voir tomber leur palais, les fourmis auront toujours leur demeure.",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=DeNCAAAAcAAJ&pg=PA28",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A9nie%20de%20Gu%C3%A9rin%20by%20Arsene%20Pelegry.jpg",
+    "Dates": "1805-1848",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 83,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1839,
+    "Autrice": "Laure Junot d’Abrantès",
+    "Citation (max 120 caractères)": "Le plus grand tous les malheurs, c'est de juger en mal l'humanité. On a peu d'estime pour soi-même, quand on la refuse aux autres.",
+    "Réfs": "Blanche, Volume 1",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=abI5AAAAcAAJ&pg=PA126",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Mme_la_Duchesse_d%27Abrant%C3%A8s_%28BM_1870%2C1008.1394%29.jpg/260px-Mme_la_Duchesse_d%27Abrant%C3%A8s_%28BM_1870%2C1008.1394%29.jpg",
+    "Dates": "1784-1838",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 130,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1839,
+    "Autrice": "Flora Tristan",
+    "Citation (max 120 caractères)": "Je passe ici pour une révolutionnaire, une jacobine, une Sanguinaire - enfin pour une espèce de monstre femelle qui ose réclamer l'égalité de droits pour l'homme comme pour la femme.",
+    "Réfs": "Lettres, Flora Tristan, éd. éditions du Seuil, 1980, À Olympe Chodzko, Londres, 1er août 1839, p. 105",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flora_Tristan_1838.JPG/220px-Flora_Tristan_1838.JPG",
+    "Dates": "1803-1844",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 199,
+    "Source première édition": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1EA8379944AB086F8F41650E5AA1E097/S0020859000005976a.pdf/flora_tristan_trentecinq_lettres.pdf#page=29"
+  },
+  {
+    "Date": 1843,
+    "Autrice": "Flora Tristan",
+    "Citation (max 120 caractères)": "Dans la vie des ouvriers la femme est tout. Elle est leur unique providence. Si elle leur manque, tout leur manque.",
+    "Réfs": "Union ouvrière",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://gallica.bnf.fr/ark:/12148/btv1b8626625v/f77.item",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flora_Tristan_1838.JPG/220px-Flora_Tristan_1838.JPG",
+    "Dates": "1803-1844",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 115,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1848,
+    "Autrice": "Marie d’Agoult",
+    "Citation (max 120 caractères)": "Démocratie, fière démocratie, prépare à ton foyer une place pour des hôtes insolents, venus de loin ; voici le cortége de l’empire qui passe !",
+    "Réfs": "Lettres républicaines",
+    "Wikipédia": "",
+    "Wikisource": "https://fr.wikisource.org/wiki/Lettres_rA13%A9publicaines/Lettre_04",
+    "URL texte date": "",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Henri_Lehmann_-_Portrait_de_Marie_de_Flavigny%2C_comtesse_d%27Agoult%2C_1839.jpg/741px-Henri_Lehmann_-_Portrait_de_Marie_de_Flavigny%2C_comtesse_d%27Agoult%2C_1839.jpg?20240315075228",
+    "Dates": "1805-1876",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 142,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1852,
+    "Autrice": "Zulma Carraud",
+    "Citation (max 120 caractères)": "Si Dieu nous retirait son soleil chaque fois que nous l’offensons, nous n’aurions guère d’épis mûrs pour la moisson.",
+    "Réfs": "La petite Jeanne ou le devoir, Zulma Carraud, éd. Librairie Hachette & cie, 1869, p. 121",
+    "Wikipédia": "https://fr.wikipedia.org/wiki/fr:Zulma_Carraud",
+    "Wikisource": "",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Zulma%20Carraud.jpg",
+    "Dates": "1796-1889",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 116,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1858,
+    "Autrice": "Juliette Adam",
+    "Citation (max 120 caractères)": "Ce qui m’a toujours choquée chez les hommes, c’est le profond dédain avec lequel ils traitent la femme qui a atteint l’âge mûr.",
+    "Réfs": "Idées anti-proudhoniennes sur l'amour, la femme et le mariage",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://gallica.bnf.fr/ark:/12148/bpt6k10250787/f112.image",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Juliette_Adam_Nadar_01.jpg/220px-Juliette_Adam_Nadar_01.jpg",
+    "Dates": "1836-1936",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 127,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1865,
+    "Autrice": "George Sand",
+    "Citation (max 120 caractères)": "On dirait que tu te souviens aujourd’hui d’avoir été le plus grand tardigrade de la création.",
+    "Réfs": "Laura. Voyages et impressions",
+    "Wikipédia": "",
+    "Wikisource": "https://fr.wikisource.org/wiki/Laura._%E2%80%95_Voyage_dans_le_cristal",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/George%20Sand.PNG",
+    "Dates": "1804-1876",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 93,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1866,
+    "Autrice": "Julie-Victoire Daubié",
+    "Citation (max 120 caractères)": "Qu'on le veuille ou qu'on ne le veuille pas, il faut faire entrer les femmes dans le droit commun.",
+    "Réfs": "La femme pauvre au XIXe siècle",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/J.V%20Daubi%C3%A9.jpg",
+    "Dates": "1824-1874",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 214,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1868,
+    "Autrice": "André Léo",
+    "Citation (max 120 caractères)": "La terre est de propriété humaine. Elle appartient aussi bien aux générations à venir qu’aux générations présentes.",
+    "Réfs": "",
+    "Wikipédia": "",
+    "Wikisource": "https://fr.wikisource.org/wiki/Communisme_et_propriA13%A9tA13%A9",
+    "URL texte date": "",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Andreleo.jpg",
+    "Dates": "1824-1900",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 115,
+    "Source première édition": ""
+  },
+  {
+    "Date": 1869,
+    "Autrice": "Sophie de Ségur",
+    "Citation (max 120 caractères)": "L’orgueil se gagne, comme les maladies de peau ; en visitant les malades, on gagne leurs maladies.",
+    "Réfs": "Diloy le chemineau",
+    "Wikipédia": "",
+    "Wikisource": "",
+    "URL texte date": "https://books.google.fr/books?id=VzLMKf-4rOYC&pg=PA27",
+    "Image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sophie%20de%20S%C3%A9gur.jpg",
+    "Dates": "1799-1874",
+    "Nationalité": "",
+    "Genre/courants": "",
+    "Longueur": 98,
+    "Source première édition": ""
+  }
+]
+
+function normalise(chaine){
+    return chaine.replaceAll(" ;","&nbsp;;").replaceAll(" ?","&nbsp;?").replaceAll(" !","&nbsp;!").replaceAll(" :","&nbsp;:").replaceAll(" / ","<br>")
+}
+
+data.forEach(citation => {
+    document.querySelector("ul").innerHTML += `<li class="recto"><div class="carte"><div class="gauche"><img class="photo" src="${citation.Image}"></div><img class="logo" src="https://george2etexte.files.wordpress.com/2019/02/ledeuxiemetexte-medium.png"><div class="droite"><h2 class="nom"><span class="orange">✷${citation.Date}✷</span></h2><span class="nom">${citation.Autrice}</span><br><span class="nom">(${citation.Dates})</span><br><div id="qrcode${citation.Date}"></div></div></div></li>
+    <li class="recto"><div class="carte"><table><tr><td class="citation">«&nbsp;${normalise(citation["Citation (max 120 caractères)"])}&nbsp;»</td></tr></table><div class="ref">${normalise(citation["Réfs"])}</div></div></li>`
+    new QRCode(document.getElementById("qrcode"+citation.Date), {
+    text: "http://jindo.dev.naver.com/collie",
+    width: 128,
+    height: 128,
+    colorDark : "#ff914d",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H});
+})
+</script>
+</html>
