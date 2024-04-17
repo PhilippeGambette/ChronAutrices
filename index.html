@@ -435,7 +435,7 @@ function callNextCitation(){
   console.log(citation.Image);
   console.log(citation["Réf."]);
   console.log(citation["Citation (max 120 caractères)"]);
-    document.querySelector("ul").innerHTML += `<li class="recto"><div class="carte"><div class="gauche"><img class="photo" src="${citation.Image.replace("http:","https:")}"></div><img class="logo" src="https://george2etexte.files.wordpress.com/2019/02/ledeuxiemet  exte-medium.png"><div class="droite"><h2 class="nom"><span class="orange">✷${citation.Date}✷</span></h2><span class="nom">${citation.Autrice}</span><br><span class="nom">(${citation.Dates})</span><br><div class="qrcode" id="qrcode${citation.Date}"></div></div></div></li>
+    document.querySelector("ul").innerHTML += `<li class="recto"><div class="carte"><div class="gauche"><img class="photo" src="${citation.Image.replace("http:","https:")}"></div><img class="logo" src="ledeuxiemetexte.png"><div class="droite"><h2 class="nom"><span class="orange">✷${citation.Date}✷</span></h2><span class="nom">${citation.Autrice}</span><br><span class="nom">(${citation.Dates})</span><br><div class="qrcode" id="qrcode${citation.Date}"></div></div></div></li>
     <li class="recto"><div class="carte"><table><tr><td class="citation">«&nbsp;${normalise(citation["Citation (max 120 caractères)"])}&nbsp;»</td></tr></table><div class="ref">${normalise(citation["Réf."])}</div></div></li>`
     new QRCode(document.getElementById("qrcode"+citation.Date), {
     text: "http://jindo.dev.naver.com/collie#"+citation.Date,
