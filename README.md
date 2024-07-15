@@ -1,6 +1,6 @@
 # ChronAutrices
 
-Game under development by [http://ledeuxiemetexte.fr/ Le deuxième texte]. More information to appear here...
+Game under development by [Le deuxième texte](http://ledeuxiemetexte.fr/). More information to appear here...
 
 ## License
 
