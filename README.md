@@ -1,6 +1,8 @@
 # ChronAutrices
 
-Game under development by [Le deuxième texte](http://ledeuxiemetexte.fr/). More information to appear here...
+First version of the game [Chron'Autrices](https://ledeuxiemetexte.fr/chronautrices/) developed by association [Le deuxième texte](http://ledeuxiemetexte.fr/).
+
+The Git repo has moved at https://framagit.org/george2etexte/ChronAutrices (see the credits there about the data)
 
 ## License
 
